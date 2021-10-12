@@ -125,7 +125,11 @@ img {
   align-items: center;
   width: 100%;
   height: 30px;
-  background-color: var(--color-black);
+  background-color: var(--color-transparent);
+}
+
+#navbar.navbar--non-transparent {
+  background-color: var(--color-dark-grey);
 }
 
 .navbar__menu {
@@ -267,3 +271,4 @@ img {
 
 #footer p {
   margin-bottom: 0;
+}
