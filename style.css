@@ -39,6 +39,7 @@
 /* Universal tags */
 * {
   box-sizing: border-box;
+  word-break: keep-all;
 }
 
 body {
@@ -54,9 +55,13 @@ a {
 
 h1,
 h2,
-ul {
+ul,
+li,
+p,
+img {
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 button {
@@ -100,10 +105,12 @@ img {
 
 /* section */
 .section__container {
+  padding: 0 7.5%;
   display: flex;
   flex-direction: column;
   max-width: 1200px;
   margin-top: 100px;
+  height: 90vh;
 
   align-items: center;
   justify-content: center;
@@ -231,3 +238,32 @@ img {
 #home {
   background-color: var(--color-black);
 }
+
+/* intro */
+#intro {
+  background-color: var(--color-white);
+}
+
+/* first */
+#first {
+  background-color: var(--color--black);
+}
+
+/* second */
+#second {
+  background-color: var(--color-white);
+}
+
+/* third */
+#third {
+  background-color: var(--color--black);
+}
+
+/* footer */
+#footer {
+  padding: 7.5%;
+  background-color: var(--color-black);
+}
+
+#footer p {
+  margin-bottom: 0;
