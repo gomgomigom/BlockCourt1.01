@@ -70,6 +70,7 @@ button {
   cursor: pointer;
   color: var(--color-gold);
   outline: none;
+  font-size: var(--font-medium);
 }
 
 li {
@@ -112,7 +113,6 @@ img {
   max-width: 1200px;
   margin-top: 100px;
   height: 90vh;
-
   align-items: center;
   justify-content: center;
 }
@@ -153,6 +153,7 @@ img {
 
 .navbar__menu button {
   width: 99vw;
+  padding: 5px 0;
   color: var(--color-gold);
   border: 1px solid var(--color-transparent);
   transition: all var(--animation-duration) ease-in-out;
@@ -268,6 +269,17 @@ img {
 /* home */
 #home {
   background-color: var(--color-black);
+}
+
+.home__container {
+  padding: 0 7.5%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin-top: 100px;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
 }
 
 /* intro */

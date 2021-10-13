@@ -22,14 +22,25 @@ navbarMenu.addEventListener('click', e => {
   scrollIntoView(link);
 });
 
+// 넷바 메뉴 나타내기
+const hamberger = document.querySelector('.navbar__toggle');
+hamberger.addEventListener('click', () => {
+  navbarMenu.classList.toggle('open');
+});
+
+// 홈 스크롤 내릴수록 투명하게
+const homeContainer = document.querySelector('.home__container');
+const homeHeight = homeContainer.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+  console.log(homeHeight);
+  if (window.scrollY > homeHeight) {
+    return;
+  }
+  homeContainer.style.opacity = 1 - window.scrollY / homeHeight / 1.1;
+});
+
 // 스크롤 함수
 function scrollIntoView(link) {
   const scrollTo = document.querySelector(link);
   scrollTo.scrollIntoView({ behavior: 'smooth' });
 }
-
-// 넷바 메뉴 나타내기
-const hamberger = document.querySelector('.navbar__toggle');
-hamberger.addEventListener('click', e => {
-  navbarMenu.classList.toggle('open');
-});
