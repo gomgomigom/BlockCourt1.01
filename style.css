@@ -68,6 +68,7 @@ button {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  color: var(--color-gold);
   outline: none;
 }
 
@@ -135,19 +136,37 @@ img {
 }
 
 .navbar__menu {
+  position: absolute;
   display: flex;
+  top: 30px;
+  width: 100vw;
+  background-color: var(--color-black);
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  display: none;
+}
+
+.navbar__menu.open {
+  display: flex;
 }
 
 .navbar__menu button {
+  width: 99vw;
   color: var(--color-gold);
   border: 1px solid var(--color-transparent);
+  transition: all var(--animation-duration) ease-in-out;
 }
 
 .navbar__menu button:hover {
   border: 1px solid var(--color-gold);
   border-radius: 4px;
+}
+
+.navbar__toggle i {
+  font-size: 25px;
+  line-height: 30px;
+  padding: 0 10px;
 }
 
 /* cube */

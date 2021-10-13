@@ -18,6 +18,7 @@ navbarMenu.addEventListener('click', e => {
   if (link == null) {
     return;
   }
+  navbarMenu.classList.remove('open');
   scrollIntoView(link);
 });
 
@@ -26,3 +27,9 @@ function scrollIntoView(link) {
   const scrollTo = document.querySelector(link);
   scrollTo.scrollIntoView({ behavior: 'smooth' });
 }
+
+// 넷바 메뉴 나타내기
+const hamberger = document.querySelector('.navbar__toggle');
+hamberger.addEventListener('click', e => {
+  navbarMenu.classList.toggle('open');
+});
