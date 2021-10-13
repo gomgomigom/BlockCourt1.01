@@ -10,3 +10,20 @@ document.addEventListener('scroll', () => {
     navbar.classList.remove('navbar--non-transparent');
   }
 });
+
+// 넷바 메뉴 클릭했을때 해당 위치로 이동
+const navbarMenu = document.querySelector('.navbar__menu');
+navbarMenu.addEventListener('click', e => {
+  const link = e.target.dataset.link || e.target.parentNode.dataset.link;
+  console.log(link);
+  if (link == null) {
+    return;
+  }
+  scrollIntoView(link);
+});
+
+// 스크롤 함수
+function scrollIntoView(link) {
+  const scrollTo = document.querySelector(link);
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
+}
