@@ -26,18 +26,28 @@ navbarMenu.addEventListener('click', e => {
 const hamberger = document.querySelector('.navbar__toggle');
 hamberger.addEventListener('click', () => {
   navbarMenu.classList.toggle('open');
+  navbarMenu.classList.add('anim-out');
+  setTimeout(() => {
+    navbarMenu.classList.remove('anim-out');
+  }, 300);
 });
 
 // 홈 스크롤 내릴수록 투명하게
 const homeContainer = document.querySelector('.home__container');
-const homeHeight = homeContainer.getBoundingClientRect().height;
-document.addEventListener('scroll', () => {
-  console.log(homeHeight);
-  if (window.scrollY > homeHeight) {
-    return;
-  }
-  homeContainer.style.opacity = 1 - window.scrollY / homeHeight / 1.1;
-});
+scrollTransparent(homeContainer);
+
+function scrollTransparent(container) {
+  const containerHeight = container.getBoundingClientRect().height;
+  document.addEventListener('scroll', () => {
+    if (window.scrollY > containerHeight) {
+      return;
+    }
+    container.style.opacity = 1 - window.scrollY / containerHeight / 1.2;
+  });
+}
+
+// 팝업창 띄우기
+// const win = window.open('./popup.html', 'PopupWin', 'width=200, height=200, status=no, titlebar=no, toolbar=no');
 
 // 스크롤 함수
 function scrollIntoView(link) {
