@@ -15,7 +15,6 @@ document.addEventListener('scroll', () => {
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', e => {
   const link = e.target.dataset.link || e.target.parentNode.dataset.link;
-  console.log(link);
   if (link == null) {
     return;
   }
