@@ -107,13 +107,12 @@ img {
 
 /* section */
 .section__container {
-  padding: 0 7.5%;
+  padding: 5% 7.5%;
   display: flex;
   flex-direction: column;
   max-width: 1200px;
-  margin: auto;
-  margin-top: 100px;
-  height: 90vh;
+  margin: 100px auto;
+  height: 100vh;
   align-items: center;
   justify-content: center;
   opacity: 0.5;
@@ -285,6 +284,18 @@ img {
   background-color: var(--color-black);
 }
 
+/* servey */
+#servey {
+  background-color: var(--color-black);
+}
+
+#servey .section__container {
+  height: 100vh;
+  margin: auto;
+  opacity: 1;
+  padding: 0;
+}
+
 /* intro */
 #intro {
   background-color: var(--color-white);
@@ -313,15 +324,4 @@ img {
 
 #footer p {
   margin-bottom: 0;
-}
-
-/* typeform */
-#typeform {
-  background-color: var(--color-black);
-}
-
-#typeform .section__container {
-  height: 100vh;
-  margin: auto;
-  opacity: 1;
 }

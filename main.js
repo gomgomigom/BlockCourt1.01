@@ -46,9 +46,6 @@ function scrollTransparent(container) {
   });
 }
 
-// 팝업창 띄우기
-// const win = window.open('./popup.html', 'PopupWin', 'width=200, height=200, status=no, titlebar=no, toolbar=no');
-
 // 스크롤 함수
 function scrollIntoView(link) {
   const scrollTo = document.querySelector(link);
@@ -73,3 +70,24 @@ const callback = (entries, observer) => {
 };
 const observer = new IntersectionObserver(callback, options);
 section.forEach(aaa => observer.observe(aaa));
+
+// scroll in step
+const sectionIds = ['#home', '#survey', '#intro', '#first', '#second', '#third', '#footer'];
+console.log(sectionIds);
+const sections = sectionIds.map(id => document.querySelector(id));
+const navItems = sectionIds.map(id => document.querySelector(`[data-link="${id}"] button`));
+console.log(navItems);
+console.log(sections);
+
+const observe2Callback = (ids, observe2) => {
+  ids.forEach(id => {
+    if (id.isIntersecting) {
+      console.log(id.target.id);
+      const idPass = `#${id.target.id}`;
+      // console.log(idPass);
+      scrollIntoView(idPass);
+    }
+  });
+};
+const observer2 = new IntersectionObserver(observe2Callback, options);
+sections.forEach(section => observer2.observe(section));
