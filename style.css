@@ -317,10 +317,10 @@ img {
 
 /* typeform */
 #typeform {
-  height: 100vh;
+  background-color: var(--color-black);
 }
 
-.typeform__content {
-  width: 100%;
-  height: 100%;
+#typeform .section__container {
+  height: 100vh;
+  margin: auto;
 }
