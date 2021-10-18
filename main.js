@@ -62,7 +62,6 @@ const options = {
 };
 
 const section = document.querySelectorAll('.section__container');
-console.log(section);
 const callback = (entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
