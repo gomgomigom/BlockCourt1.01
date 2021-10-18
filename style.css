@@ -323,4 +323,5 @@ img {
 #typeform .section__container {
   height: 100vh;
   margin: auto;
+  opacity: 1;
 }
