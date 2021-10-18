@@ -314,3 +314,8 @@ img {
 #footer p {
   margin-bottom: 0;
 }
+
+/* typeform */
+#typeform {
+  height: 100vh;
+}
