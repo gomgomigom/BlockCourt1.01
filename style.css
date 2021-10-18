@@ -319,3 +319,8 @@ img {
 #typeform {
   height: 100vh;
 }
+
+.typeform__content {
+  width: 100%;
+  height: 100%;
+}
