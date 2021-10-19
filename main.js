@@ -96,7 +96,7 @@ const observerCallback = (entries, observer) => {
       selectedNavItem.classList.remove('selected');
       selectedNavItem = navItems[selectedIndex];
       selectedNavItem.classList.add('selected');
-      // scrollIntoView(sectionIds[selectedIndex]);
+      scrollIntoView(sectionIds[selectedIndex]);
       console.log(sectionIds[selectedIndex]);
     }
   });
