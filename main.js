@@ -46,12 +46,6 @@ function scrollTransparent(container) {
   });
 }
 
-// 스크롤 함수
-function scrollIntoView(link) {
-  const scrollTo = document.querySelector(link);
-  scrollTo.scrollIntoView({ behavior: 'smooth' });
-}
-
 const options = {
   root: null,
   rootMargin: '0px',
@@ -79,29 +73,43 @@ const navItems = sectionIds.map(id => document.querySelector(`[data-link="${id}"
 console.log(sections);
 console.log(navItems);
 
+let selectedNavIndex = 0;
 let selectedNavItem = navItems[0];
+
+function selectNavItem(selected) {
+  selectedNavItem.classList.remove('selected');
+  selectedNavItem = selected;
+  selectedNavItem.classList.add('selected');
+}
 
 const observerCallback = (entries, observer) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting && entry.intersectionRatio > 0) {
-      console.log(entry);
-      console.log(entry.target);
       const index = sectionIds.indexOf(`#${entry.target.id}`);
-      let selectedIndex;
       if (entry.boundingClientRect.y < 0) {
-        selectedIndex = index + 1;
+        selectedNavIndex = index + 1;
       } else {
-        selectedIndex = index - 1;
+        selectedNavIndex = index - 1;
       }
-      selectedNavItem.classList.remove('selected');
-      selectedNavItem = navItems[selectedIndex];
-      selectedNavItem.classList.add('selected');
-      scrollIntoView(sectionIds[selectedIndex]);
-      console.log(sectionIds[selectedIndex]);
     }
   });
 };
 
 const observer2 = new IntersectionObserver(observerCallback, options);
-
 sections.forEach(section => observer2.observe(section));
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY === 0) {
+    selectedNavIndex = 0;
+  } else if (Math.ceil(window.scrollY + window.innerHeight) >= document.body.clientHeight) {
+    selectedNavIndex = navItems.length - 1;
+  }
+  selectNavItem(navItems[selectedNavIndex]);
+});
+
+// 스크롤 함수
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
+  selectNavItem(navItems[sectionIds.indexOf(selector)]);
+}
