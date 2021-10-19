@@ -73,3 +73,35 @@ section.forEach(aaa => observer.observe(aaa));
 
 // scroll in step
 const sectionIds = ['#home', '#survey', '#intro', '#first', '#second', '#third', '#footer'];
+
+const sections = sectionIds.map(id => document.querySelector(id));
+const navItems = sectionIds.map(id => document.querySelector(`[data-link="${id}"] button`));
+console.log(sections);
+console.log(navItems);
+
+let selectedNavItem = navItems[0];
+
+const observerCallback = (entries, observer) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting && entry.intersectionRatio > 0) {
+      console.log(entry);
+      console.log(entry.target);
+      const index = sectionIds.indexOf(`#${entry.target.id}`);
+      let selectedIndex;
+      if (entry.boundingClientRect.y < 0) {
+        selectedIndex = index + 1;
+      } else {
+        selectedIndex = index - 1;
+      }
+      selectedNavItem.classList.remove('selected');
+      selectedNavItem = navItems[selectedIndex];
+      selectedNavItem.classList.add('selected');
+      // scrollIntoView(sectionIds[selectedIndex]);
+      console.log(sectionIds[selectedIndex]);
+    }
+  });
+};
+
+const observer2 = new IntersectionObserver(observerCallback, options);
+
+sections.forEach(section => observer2.observe(section));
