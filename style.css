@@ -46,12 +46,12 @@
 body {
   font-family: 'Jua', sans-serif;
   margin: 0;
-  background-color: var(--color-black);
+  background-color: var(--color-white);
 }
 
 a {
   text-decoration: none;
-  color: var(--color-black);
+  color: var(--color-blue);
 }
 
 h1,
@@ -82,21 +82,21 @@ li {
 h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
-  color: var(--color-gold);
+  color: var(--color-blue);
   margin: 32px 0;
 }
 
 h2 {
-  font-size: var(--font-medium);
-  font-weight: var(--weight-semi-bold);
-  color: var(--color-gold);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-blue);
   margin: 16px 0;
 }
 
 p {
   font-size: var(--font-micro);
   font-weight: var(--weight-regular);
-  color: var(--color-gold);
+  color: var(--color-blue);
   margin: 8px 0;
 }
 
@@ -121,13 +121,9 @@ img {
 }
 
 /* home */
-#home {
-  background-color: var(--color-black);
-}
-
 .home__video {
   position: static;
-  width: 100vw;
+  width: 100%;
   height: auto;
   object-fit: contain;
   z-index: 0;
@@ -135,10 +131,6 @@ img {
 }
 
 /* servey */
-#servey {
-  background-color: var(--color-black);
-}
-
 #servey .section__container {
   height: 100vh;
   margin: auto;
@@ -149,12 +141,16 @@ img {
 
 /* footer */
 #footer {
+  text-align: center;
   padding: 20px 7.5%;
-  background-color: var(--color-black);
 }
 
 #footer p {
   margin-bottom: 0;
+}
+
+#footer a {
+  padding: 5px;
 }
 
 /* for desktop */
@@ -167,15 +163,26 @@ img {
     --font-small: 16px;
     --font-micro: 14px;
   }
+}
 
   @media (prefers-color-scheme: dark) {
-    p {
-      color: var(--color-blue);
+    body {
+      background-color:var(--color-blue);
+    }
+    p,
+    a,
+    h2 {
+      color: var(--color-white);
     }
   }
   @media (prefers-color-scheme: light) {
-    p {
-      color: var(--color-gold);
+    body {
+      background-color: var(--color-white);
+    }
+    p,
+    a,
+    h2 {
+      color: var(--color-blue);
     }
   }
 
