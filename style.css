@@ -178,23 +178,3 @@ img {
     color: var(--color-blue);
   }
 }
-
-/* h1,
-  h2,
-  p,
-  img {
-    margin: 20px 0;
-    padding: 10px;
-  }
-
-  .navbar__toggle {
-    display: none;
-  }
-
-  #navbar {
-    flex-direction: row;
-  }
-
-  .navbar__menu {
-    display: flex;
-  } */
