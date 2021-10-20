@@ -93,7 +93,8 @@ h2 {
   margin: 16px 0;
 }
 
-p, a {
+p,
+a {
   font-size: var(--font-micro);
   font-weight: var(--weight-regular);
   color: var(--color-blue);
@@ -145,8 +146,6 @@ img {
   padding: 20px 7.5%;
 }
 
-
-
 /* for desktop */
 @media screen and (min-width: 768px) {
   :root {
@@ -159,28 +158,28 @@ img {
   }
 }
 
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color:var(--color-blue);
-    }
-    p,
-    a,
-    h2 {
-      color: var(--color-white);
-    }
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--color-blue);
   }
-  @media (prefers-color-scheme: light) {
-    body {
-      background-color: var(--color-white);
-    }
-    p,
-    a,
-    h2 {
-      color: var(--color-blue);
-    }
+  p,
+  a,
+  h2 {
+    color: var(--color-white);
   }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--color-white);
+  }
+  p,
+  a,
+  h2 {
+    color: var(--color-blue);
+  }
+}
 
-  /* h1,
+/* h1,
   h2,
   p,
   img {
@@ -199,4 +198,3 @@ img {
   .navbar__menu {
     display: flex;
   } */
-}
