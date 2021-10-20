@@ -147,11 +147,9 @@ img {
 
 #footer p {
   margin-bottom: 0;
+  margin-top: 0;
 }
 
-#footer a {
-  padding: 5px;
-}
 
 /* for desktop */
 @media screen and (min-width: 768px) {
