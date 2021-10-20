@@ -149,7 +149,7 @@ img {
 
 /* footer */
 #footer {
-  padding: 7.5%;
+  padding: 20px 7.5%;
   background-color: var(--color-black);
 }
 
@@ -166,6 +166,17 @@ img {
     --font-regular: 18px;
     --font-small: 16px;
     --font-micro: 14px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    p {
+      color: var(--color-blue);
+    }
+  }
+  @media (prefers-color-scheme: light) {
+    p {
+      color: var(--color-gold);
+    }
   }
 
   /* h1,
