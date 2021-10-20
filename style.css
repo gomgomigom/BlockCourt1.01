@@ -245,3 +245,35 @@ img {
 #footer p {
   margin-bottom: 0;
 }
+
+/* for desktop */
+@media screen and (min-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 48px;
+    --font-medium: 28px;
+    --font-regular: 18px;
+    --font-small: 16px;
+    --font-micro: 14px;
+  }
+
+  /* h1,
+  h2,
+  p,
+  img {
+    margin: 20px 0;
+    padding: 10px;
+  }
+
+  .navbar__toggle {
+    display: none;
+  }
+
+  #navbar {
+    flex-direction: row;
+  }
+
+  .navbar__menu {
+    display: flex;
+  } */
+}
