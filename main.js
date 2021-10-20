@@ -10,13 +10,6 @@ function scrollTransparent(container) {
     if (window.scrollY > containerHeight) {
       return;
     }
-    container.style.opacity = 1 - window.scrollY / containerHeight / 1.2;
+    container.style.opacity = 1 - window.scrollY / containerHeight / 1;
   });
-}
-
-// 스크롤 함수
-function scrollIntoView(selector) {
-  const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({ behavior: 'smooth' });
-  selectNavItem(navItems[sectionIds.indexOf(selector)]);
 }
