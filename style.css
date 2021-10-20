@@ -112,7 +112,7 @@ img {
   display: flex;
   flex-direction: column;
   max-width: 1200px;
-  margin: 100px auto;
+  margin: 0 auto;
   height: 100vh;
   align-items: center;
   justify-content: center;
@@ -192,14 +192,13 @@ img {
 /* home */
 #home {
   background-color: var(--color-black);
-  height: 100vh;
 }
 
 .home__video {
-  position: absolute;
+  position: static;
   width: 100vw;
-  height: 100vh;
-  object-fit: fill;
+  height: auto;
+  object-fit: contain;
   z-index: 0;
   top: 0;
 }
