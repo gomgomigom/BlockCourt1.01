@@ -129,6 +129,7 @@ img {
   object-fit: contain;
   z-index: 0;
   top: 0;
+  background: transparent url('./assets/imgs/KakaoTalk_20211020_155050235.gif') 50% 50% no-repeat;
 }
 
 /* servey */
