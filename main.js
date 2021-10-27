@@ -13,3 +13,8 @@ function scrollTransparent(container) {
     container.style.opacity = 1 - window.scrollY / containerHeight / 1;
   });
 }
+
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
+}
